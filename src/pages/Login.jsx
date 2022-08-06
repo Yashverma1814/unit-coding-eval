@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import axios from 'axios';
@@ -13,9 +13,11 @@ export const Login = () => {
     const [tokens, setTokens] = useState("");
     const dispatch = useDispatch();
     const token = useSelector((state) => state.loginReducer.token);
+
     if (token === "QpwL5tke4Pnpja7X4") {
         return <Navigate to="/" />
     }
+
     const handleLogin = () => {
         axios({
             method: "post",
@@ -32,7 +34,8 @@ export const Login = () => {
 
     return (
         <div>
-
+            <h2>LOGIN</h2>
+            <marquee behavior="" direction="">PLEASE CLICK ON LOGIN Button MORE THAN ONE TIME continuously AFTER SUBMITTING THE DETAILS TO PROCEED FURTHER</marquee>
             <TextField value={ema} onChange={(e) => setEmail(e.target.value)} label='Email' variant="outlined" />
             <br />
             <TextField value={pass} onChange={(e) => setPass(e.target.value)} label="Password" type='password' variant="outlined" />

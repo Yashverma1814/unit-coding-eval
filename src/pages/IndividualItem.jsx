@@ -22,7 +22,7 @@ export const IndividualItem = () => {
     },[result])
     return (
         <div>
-            <Button onClick={()=>setResult(!result)}>See Result</Button>
+            <Button onClick={()=>setResult(!result)}>If Results Are Not Shown Click Here</Button>
             <ProductCard item={product} />
         </div>
     )
